@@ -30,4 +30,13 @@ public class UserServiceImpl implements UserService {
         System.out.println(info.getTotal());
         return list;
     }
+
+    @Override
+    public List<User> findUserByUsername(String username) {
+        PageHelper.startPage(1,10,true);
+        List<User> list = userMapper.findUserByUsername(username);
+        PageInfo<User> info = new PageInfo<>(list);
+        System.out.println(info.getTotal());
+        return list;
+    }
 }

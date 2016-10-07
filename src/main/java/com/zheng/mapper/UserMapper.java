@@ -11,4 +11,7 @@ import java.util.List;
 public interface UserMapper {
     @Select("select * from user")
     public List<User> findList();
+
+    @Select("select * from user where username like '%${value}%'") // = #{username}
+    public List<User> findUserByUsername(String username);
 }

@@ -21,4 +21,12 @@ public class UserServiceTest extends BaseServiceTest {
         System.out.println(list.size());
         System.out.println(list.get(0));
     }
+
+    @Test
+    public void testFindByUsername() {
+        String username = "i";
+        List<User> list = userService.findUserByUsername(username);
+        System.out.println(list.size());
+        System.out.println(list);
+    }
 }
